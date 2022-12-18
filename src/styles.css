@@ -64,3 +64,6 @@ p.data,
   transform: scale(1.2);
   transition: 1s;
 }
+.source {
+  text-decoration: none;
+}
