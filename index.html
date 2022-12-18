@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="border border-2 p-4 rounded">
+        <form class="search" id="city-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                id="city-input"
+                type="text"
+                class="form-control"
+                autofocus="on"
+                placeholder="Enter a city"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                class="btn btn-primary w-100"
+                value="Search"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                class="btn btn-success w-100"
+                id="location"
+                value="Current"
+              />
+            </div>
+          </div>
+        </form>
+        <div class="row latest-searches">
+          <ul class="navigation">
+            <li class="navigation-city"><a href="">New York</a></li>
+            <li class="navigation-city"><a href="">Paris</a></li>
+            <li class="navigation-city"><a href="">Helsinki</a></li>
+            <li class="navigation-city"><a href="">Rovaniemi</a></li>
+          </ul>
+        </div>
+        <div class="card city col-sm-4 border-0">
+          <div class="card-body">
+            <h2 class="card-title" id="city"></h2>
+            <p class="card-text data m-0" id="date"></p>
+            <p class="card-text weather" id="weather"></p>
+          </div>
+        </div>
+
+        <div class="card-group">
+          <div class="col-sm-2">
+            <div class="card weather border-0">
+              <div class="card-body pt-2" style="height: 90px">
+                <img
+                  src="images/cloudy.png"
+                  class="card-img"
+                  alt="Cloudy"
+                  id="weather-icon"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="card weather-temperature pt-2 border-0"
+              style="height: 90px; width: 150px"
+            >
+              <div class="card-body" style="padding-left: 3px">
+                <h1 class="card-text temperature-now">
+                  <span id="correct-temp"> </span>
+                  <span id="temp">°C</span>
+                </h1>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              class="card weather-details border-0"
+              style="height: 90px; width: 270px; margin-left: 70px"
+            >
+              <div class="card-body p-0">
+                <p class="precipitation">
+                  <span>Humidity: </span><span id="humidity"></span
+                  ><span>%</span>
+                </p>
+                <p class="wind">
+                  Wind: <span id="wind"></span> <span> km/h</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
