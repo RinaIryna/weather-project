@@ -57,6 +57,8 @@ function showTemperature(response) {
   document
     .querySelector("#weather-icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+  celsiusTemp = response.data.main.temp;
 }
 
 function searchCity(city) {
@@ -89,5 +91,30 @@ function currentLocation(event) {
 
 let locationButton = document.querySelector("#location");
 locationButton.addEventListener("click", currentLocation);
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitElement = document.querySelector("#correct-temp");
+  let fahrenheitTemp = Math.round(celsiusTemp * 1.8 + 32);
+  fahrenheitElement.innerHTML = `${fahrenheitTemp}`;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let celsiusElement = document.querySelector("#correct-temp");
+  celsiusElement.innerHTML = Math.round(celsiusTemp);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
 
 searchCity("Helsinki");

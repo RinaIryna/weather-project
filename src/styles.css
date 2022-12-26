@@ -14,6 +14,10 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+a {
+  text-decoration: none;
+}
+
 #weather-icon {
   height: 64px;
   width: 64px;
@@ -44,4 +48,13 @@ li:first-letter {
   position: relative;
   font-size: 18px;
   top: -34px;
+}
+
+.weather-temperature .active {
+  color: #000;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
 }
