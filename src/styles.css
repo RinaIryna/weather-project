@@ -1,69 +1,42 @@
 ul {
-  list-style: none;
+  margin: 0;
   padding: 0;
 }
 li {
-  display: inline;
-  padding: 0 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   font-size: 20px;
 }
 
-p.data,
-.weather {
-  font-size: 18px;
+#weather-icon {
+  height: 64px;
+  width: 64px;
+  margin-right: 7px;
 }
 
-#correct-temp,
-#temp {
-  display: inline;
+#correct-temp {
+  font-size: 64px;
+  line-height: 1;
 }
 
-#temp {
-  font-size: 22px;
-  vertical-align: top;
+.weather-app-wrapper {
+  margin: 20px auto;
+  max-width: 600px;
 }
 
-#celsius-link,
-#fahrenheit-link {
-  text-decoration: none;
-}
-
-.border {
-  margin: 20px 0;
-  max-width: 800px;
+.weather-app {
   padding: 20px 16px 24px;
+  border: 1px solid #878787;
+  border-radius: 10px;
 }
 
-.btn-primary {
-  width: 100px;
+.overview {
+  margin-bottom: 10px;
 }
 
-.weather-temperature {
-  height: 200px;
-}
-
-.weather-details p {
-  font-size: 22px;
-  margin: 0;
-}
-
-.precipitation {
-  padding-top: 8px;
-}
-
-.days {
-  text-align: center;
-  font-size: 16px;
-}
-
-.temperature {
-  text-align: center;
-}
-
-.weather-icon:hover {
-  transform: scale(1.2);
-  transition: 1s;
-}
-.source {
-  text-decoration: none;
+.units {
+  position: relative;
+  font-size: 18px;
+  top: -34px;
 }
